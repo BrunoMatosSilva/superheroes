@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
+import spinner from '../assets/images/Spinner.gif';
 
 export function Home() {
 
     const [listHeroe, setListHeroe] = useState([])
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         api.get('all.json')
             .then((response) => {
                 setListHeroe(response.data)
+                setLoading(false)
             }).catch(() => {
-                console.log("Api Incorreta")
             })
     }, [])
+
+    if (loading) {
+        return (
+            <div>
+                <img src={spinner} alt="Loading..." />
+            </div>
+        )
+    }
 
     return (
         <div>
