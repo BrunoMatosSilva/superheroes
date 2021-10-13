@@ -1,12 +1,12 @@
 export default {
-    title: 'light',
+    title: 'dark',
 
     colors: {
         primary: '#EC1D24',
         secundary: '#BA4E52',
 
-        background: '#CDCDCD',
-        backgroundcard: '#BA4E52',
+        background: '#000000',
+        backgroundcard: '#640707',
         text: '#FFFFFF'
     },
 };

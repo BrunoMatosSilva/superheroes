@@ -1,7 +1,7 @@
 import logotipo from "../assets/images/logo.png";
 import { Content } from "../styles/Home/styles";
 
-export function Home() {
+const Home = () => {
 
     return (
         <Content>
@@ -21,3 +21,5 @@ export function Home() {
         </Content>
     )
 }
+
+export default Home;

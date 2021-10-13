@@ -1,13 +1,24 @@
 import { useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components'
+import usePersistedTheme from '../utils/usePersistedTheme';
+
 import { api } from '../services/api';
 import spinner from '../assets/images/Spinner.gif';
-import { Content } from '../styles/ListHero/style';
-import { Header } from '../components/Header';
+import { Content, ContentList } from '../styles/ListHero/style';
+import iconstar from '../assets/images/staricon.png';
+import Header from '../components/Header';
+import light from '../styles/themes/light';
+import dark from '../styles/themes/dark';
 
-export function ListHero() {
+const ListHero = () => {
 
+    const [theme, setTheme] = usePersistedTheme('theme', light);
     const [listHeroe, setListHeroe] = useState([])
     const [loading, setLoading] = useState(true);
+
+    const toggleTheme = () => {
+        setTheme(theme.title === 'light' ? dark : light);
+    }
 
     useEffect(() => {
         api.get('all.json')
@@ -27,22 +38,30 @@ export function ListHero() {
     }
 
     return (
-        <>
-            <Header />
-            <div>
+        <ThemeProvider theme={theme}>
+            <Header toggleTheme={toggleTheme} />
+            <ContentList>
                 {listHeroe.map((heroe, key) => {
                     return (
-                        <div key={key}>
+                        <div className="listBody" key={key}>
+
                             <img src={heroe.images.sm} alt="avatar heroi" />
-                            <h2>{heroe.name}</h2>
-                            <strong>Raça:</strong> <p>{heroe.appearance.race}</p>
-                            <strong>Nome:</strong> <p>{heroe.biography.fullName}</p>
-                            <strong>Editora:</strong> <p>{heroe.biography.publisher}</p>
+                            <section>
+                                <div>
+                                    <h2>{heroe.name}</h2>
+                                    <strong>Raça:</strong> <p>{heroe.appearance.race}</p>
+                                    <strong>Nome:</strong> <p>{heroe.biography.fullName}</p>
+                                    <strong>Editora:</strong> <p>{heroe.biography.publisher}</p>
+                                </div>
+                                <button type="button" ><img src={iconstar} className="btStar" /></button>
+                            </section>
                         </div>
                     )
                 })}
 
-            </div>
-        </>
+            </ContentList>
+        </ThemeProvider>
     )
 }
+
+export default ListHero;
