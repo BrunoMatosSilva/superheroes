@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components'
 import usePersistedTheme from '../utils/usePersistedTheme';
 
-import { api } from '../services/api';
 import spinner from '../assets/images/Spinner.gif';
 import { Content, ContentList } from '../styles/ListHero/style';
 import iconstar from '../assets/images/staricon.png';
@@ -21,12 +20,17 @@ const ListHero = () => {
     }
 
     useEffect(() => {
-        api.get('all.json')
-            .then((response) => {
-                setListHeroe(response.data)
+        const fetchHeroes = async () => {
+            try {
+                const response = await fetch('https://akabab.github.io/superhero-api/api/all.json');
+                const data = await response.json();
+                setListHeroe(data)
                 setLoading(false)
-            }).catch(() => {
-            })
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchHeroes();
     }, [])
 
     if (loading) {
