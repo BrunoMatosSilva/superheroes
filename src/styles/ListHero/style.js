@@ -72,9 +72,14 @@ padding-top: 1rem;
     .btStar {
         width: 34px;
         height: 34px;
-        margin-top: 0px;
         margin-right: 1.5rem;
         border-radius: 0;
+        filter: brightness(0.4);
+        transition: all 0.2s;
+
+        &:hover {
+            filter: brightness(0.9);
+        }
     }
 
 }

@@ -74,9 +74,9 @@ const ListHero = () => {
                 {listHeroe.map((heroe) => {
                     return (
 
+                        <Link to={`/api/${heroe.id}`}>
+                            <div className="listBody" key={heroe.id}>
 
-                        <div className="listBody" key={heroe.id}>
-                            <Link to={`/api/${heroe.id}`}>
                                 <img src={heroe.images.sm} alt="avatar heroi" />
                                 <section>
                                     <div>
@@ -87,8 +87,9 @@ const ListHero = () => {
                                     </div>
                                     <button type="button" ><img src={iconstar} className="btStar" /></button>
                                 </section>
-                            </Link>
-                        </div>
+
+                            </div>
+                        </Link>
 
                     )
                 })}

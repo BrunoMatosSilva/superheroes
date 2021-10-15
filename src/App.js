@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import AppProvider from './AppContext/Provider';
 
 import Home from "./pages/Home";
 import ListHero from './pages/ListHero';
@@ -11,15 +12,17 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-      <ResetStyle />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/listhero" exact component={ListHero} />
-        <Route path="/squad" component={Squad} />
-        <Route path="/view/heroe/:id" component={Heroes} />
-      </Switch>
-    </BrowserRouter>
+    <AppProvider>
+      <BrowserRouter>
+        <ResetStyle />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/listhero" exact component={ListHero} />
+          <Route path="/squad" component={Squad} />
+          <Route path="/view/heroe/:id" component={Heroes} />
+        </Switch>
+      </BrowserRouter>
+    </AppProvider>
   );
 }
 
