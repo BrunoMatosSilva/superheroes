@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const ResetStyle = createGlobalStyle`
 @media (max-width: 1080px) {
     html{
         font-size: 93.75%;
@@ -18,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     body {
         height: calc(100vh - 52px);
-        background: ${props => props.theme.colors.background};
     }
     body, input, textarea, button {
         font-family: 'Roboto', sans-serif;

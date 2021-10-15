@@ -7,7 +7,6 @@ grid-template-columns: repeat(1, 1fr);
 align-items: center;
 justify-content: center;
 
-
 .sectionAcess {
     z-index: 1;
     margin: 0 auto;
