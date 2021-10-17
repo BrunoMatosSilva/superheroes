@@ -1,16 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const ResetStyle = createGlobalStyle`
-@media (max-width: 1080px) {
-    html{
-        font-size: 93.75%;
-    }
-}
-@media (max-width: 720px) {
-    html{
-        font-size: 87.5%;
-    }
-}
     * {
         margin: 0;
         padding: 0;
@@ -32,4 +22,20 @@ export const ResetStyle = createGlobalStyle`
     button {
         cursor: pointer;
     }
+
+    .container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 85rem;
+    padding: 0 1rem;
+    @media(max-width:1450px) {
+      max-width: 70rem;
+    }
+    @media(max-width:1000px) {
+      max-width: 50rem;
+    }
+    @media(max-width:700px) {
+      padding: 0 2rem;
+    }
+  }
 `
