@@ -19,7 +19,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/listhero" exact component={ListHero} />
           <Route path="/squad" component={Squad} />
-          <Route path="/view/heroe/:id" component={Heroes} />
+          <Route path="/view/heroes/:id" component={Heroes} />
         </Switch>
       </BrowserRouter>
     </AppProvider>

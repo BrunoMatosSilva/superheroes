@@ -74,7 +74,7 @@ const ListHero = () => {
                 {listHeroe.map((heroe) => {
                     return (
 
-                        <Link to={`/api/${heroe.id}`}>
+                        <Link to={`/view/heroes/${heroe.id}`}>
                             <div className="listBody" key={heroe.id}>
 
                                 <img src={heroe.images.sm} alt="avatar heroi" />
