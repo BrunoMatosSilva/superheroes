@@ -47,7 +47,7 @@ export const ContentList = styled.div`
     border-radius: 5px;
     margin-bottom: 1rem;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 590px) {
       width: 280px;
       padding-top: 0.5rem;
       font-size: 0.8rem;

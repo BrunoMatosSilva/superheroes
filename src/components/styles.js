@@ -12,7 +12,7 @@ export const Content = styled.div`
     justify-content: space-between;
     padding: 1rem;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 590px) {
       width: 100%;
       padding-top: 1;
     }
@@ -21,7 +21,7 @@ export const Content = styled.div`
   .headerLogo {
     width: 250px;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 590px) {
       width: 120px;
     }
   }

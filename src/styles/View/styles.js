@@ -8,7 +8,7 @@ export const Content = styled.div`
   background: ${(props) => props.theme.colors.background};
   padding-top: 1rem;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 590px) {
     align-items: center;
   }
 
@@ -27,7 +27,7 @@ export const Content = styled.div`
       filter: brightness(0.8);
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 590px) {
       margin: 0 auto;
       margin-bottom: 1rem;
     }
@@ -49,7 +49,7 @@ export const Content = styled.div`
     background: ${(props) => props.theme.colors.backgroundcard};
     border-radius: 5px;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 590px) {
       width: 380px;
       flex-direction: column;
       align-items: center;
@@ -87,7 +87,7 @@ export const Content = styled.div`
         filter: brightness(0.4);
         transition: all 0.2s;
 
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 590px) {
           display: none;
         }
 
