@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body {
         height: calc(100vh - 52px);
-        background: ${props => props.theme.colors.background};
+        background: ${(props) => props.theme.colors.background};
     }
     body, input, textarea, button {
         font-family: 'Roboto', sans-serif;
@@ -39,4 +39,4 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0 2rem;
     }
   }
-`
+`;

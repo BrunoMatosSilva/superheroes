@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Header from "../../components/Header";
-import usePersistedTheme from "../../utils/usePersistedTheme";
-import light from "../../styles/themes/light";
-import dark from "../../styles/themes/dark";
 import iconstar from "../../assets/images/staricon.png";
 import { Content } from "../../styles/View/styles";
+import { GlobalStyle } from "../../styles/globals";
+import { AppContext } from "../../contexts/AppContext";
 
 const Heroes = () => {
   const [heroe, setHeroe] = useState(null);
-  const [theme, setTheme] = usePersistedTheme("theme", light);
+  const { toggleTheme, theme } = useContext(AppContext);
   const { id } = useParams();
-
-  const toggleTheme = () => {
-    setTheme(theme.title === "light" ? dark : light);
-  };
 
   useEffect(() => {
     fetch(
@@ -33,6 +28,7 @@ const Heroes = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Header toggleTheme={toggleTheme} />
       <Content>
         <button className="button">
@@ -53,7 +49,7 @@ const Heroes = () => {
             <span>{heroe.work.occupation}</span>
           </div>
           <button type="button">
-            <img src={iconstar} className="btStar" />
+            <img src={iconstar} alt="favorito" className="btStar" />
           </button>
         </section>
       </Content>

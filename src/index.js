@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ApparenceProvider } from "./contexts/Apparence";
+import { AppProvider } from "./contexts/AppContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApparenceProvider>
+    <AppProvider>
       <App />
-    </ApparenceProvider>
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
