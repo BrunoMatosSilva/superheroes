@@ -1,19 +1,28 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Content = styled.div`
-display: flex;
-background-color: ${props => props.theme.colors.primary};
+  display: flex;
+  background-color: ${(props) => props.theme.colors.primary};
 
-section {
+  section {
     width: 1120px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
-}
 
-.headerLogo {
+    @media screen and (max-width: 425px) {
+      width: 100%;
+      padding-top: 1;
+    }
+  }
+
+  .headerLogo {
     width: 250px;
-}
-`
+
+    @media screen and (max-width: 425px) {
+      width: 120px;
+    }
+  }
+`;
