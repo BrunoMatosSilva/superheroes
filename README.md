@@ -54,7 +54,7 @@ $ cd superheroes
 $ yarn
 
 # Inicie a aplicação
-$ yarn dev
+$ yarn start
 ```
 
 <h1 align="center">Link do Projeto Online</h1>
